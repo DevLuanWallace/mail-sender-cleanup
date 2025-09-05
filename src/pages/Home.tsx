@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../co
 import { Input } from '../components/ui/input'
 import { useTheme } from '../components/theme-provider'
 import { useState } from 'react'
-import { Lock, Mail, User } from 'lucide-react'
+import { Lock, Mail, Moon, Sun, User } from 'lucide-react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs'
 import { ModeToggle } from '../components/mode-toggle'
 
@@ -21,7 +21,7 @@ interface SignupFormData {
 }
 
 export function Home() {
-  const { theme } = useTheme()
+  const { theme, toggleTheme } = useTheme()
   const [loginData, setLoginData] = useState<LoginFormData>({
     username: '',
     password: ''
@@ -32,6 +32,49 @@ export function Home() {
     password: '',
     confirmPassword: ''
   })
+
+  // Add keyframe animations for circular motion
+  const animationStyles = `
+    @keyframes circularMotion1 {
+      0% { transform: rotate(0deg) translateX(100px) rotate(0deg); }
+      100% { transform: rotate(360deg) translateX(100px) rotate(-360deg); }
+    }
+    
+    @keyframes circularMotion2 {
+      0% { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+      100% { transform: rotate(-360deg) translateX(150px) rotate(360deg); }
+    }
+    
+    @keyframes circularMotion3 {
+      0% { transform: rotate(0deg) translateX(80px) rotate(0deg); }
+      100% { transform: rotate(360deg) translateX(80px) rotate(-360deg); }
+    }
+    
+    @keyframes circularMotion4 {
+      0% { transform: rotate(0deg) translateX(120px) rotate(0deg); }
+      100% { transform: rotate(-360deg) translateX(120px) rotate(360deg); }
+    }
+    
+    @keyframes circularMotion5 {
+      0% { transform: rotate(0deg) translateX(200px) rotate(0deg); }
+      100% { transform: rotate(360deg) translateX(200px) rotate(-360deg); }
+    }
+    
+    @keyframes circularMotion6 {
+      0% { transform: rotate(0deg) translateX(60px) rotate(0deg); }
+      100% { transform: rotate(-360deg) translateX(60px) rotate(360deg); }
+    }
+    
+    @keyframes circularMotion7 {
+      0% { transform: rotate(0deg) translateX(180px) rotate(0deg); }
+      100% { transform: rotate(360deg) translateX(180px) rotate(-360deg); }
+    }
+    
+    @keyframes circularMotion8 {
+      0% { transform: rotate(0deg) translateX(90px) rotate(0deg); }
+      100% { transform: rotate(-360deg) translateX(90px) rotate(360deg); }
+    }
+  `
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault()
@@ -51,6 +94,9 @@ export function Home() {
 
   return (
     <div className="min-h-screen relative overflow-hidden">
+      {/* Inject animation styles */}
+      <style dangerouslySetInnerHTML={{ __html: animationStyles }} />
+
       {/* Heart and Circle Background */}
       <div className="absolute inset-0 z-0">
         {/* Base neutral gradient */}
@@ -60,13 +106,14 @@ export function Home() {
         <div className="absolute inset-0">
           {/* Large Heart 1 */}
           <div
-            className="absolute top-0 left-0 w-96 h-96 opacity-80"
+            className="absolute top-1/4 left-1/4 w-96 h-96 opacity-80"
             style={{
               background:
                 theme === 'dark'
                   ? 'linear-gradient(135deg, #fef3c7 0%, #fde047 50%, #facc15 100%)'
                   : 'linear-gradient(135deg, #fde047 0%, #facc15 50%, #eab308 100%)',
-              transform: 'rotate(-15deg) translate(-20%, -10%)'
+              animation: 'circularMotion1 30s linear infinite',
+              filter: 'blur(2px)'
             }}
           >
             <div
@@ -99,25 +146,27 @@ export function Home() {
 
           {/* Large Circle 1 */}
           <div
-            className="absolute top-1/4 right-0 w-[400px] h-[400px] opacity-75 rounded-full"
+            className="absolute top-1/2 right-1/3 w-[400px] h-[400px] opacity-75 rounded-full"
             style={{
               background:
                 theme === 'dark'
                   ? 'linear-gradient(45deg, #fef3c7 0%, #fbbf24 50%, #f59e0b 100%)'
                   : 'linear-gradient(45deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%)',
-              transform: 'translate(20%, -10%)'
+              animation: 'circularMotion5 15s linear infinite',
+              filter: 'blur(3px)'
             }}
           ></div>
 
           {/* Medium Heart 2 */}
           <div
-            className="absolute bottom-0 left-1/4 w-80 h-80 opacity-85"
+            className="absolute bottom-1/3 left-1/2 w-80 h-80 opacity-85"
             style={{
               background:
                 theme === 'dark'
                   ? 'linear-gradient(225deg, #fef3c7 0%, #fde047 50%, #facc15 100%)'
                   : 'linear-gradient(225deg, #fde047 0%, #facc15 50%, #ca8a04 100%)',
-              transform: 'rotate(-30deg) translate(-10%, 20%)'
+              animation: 'circularMotion2 35s linear infinite',
+              filter: 'blur(1.5px)'
             }}
           >
             <div
@@ -150,25 +199,27 @@ export function Home() {
 
           {/* Medium Circle 2 */}
           <div
-            className="absolute top-1/3 right-1/3 w-72 h-72 opacity-70 rounded-full"
+            className="absolute top-1/5 right-1/4 w-72 h-72 opacity-70 rounded-full"
             style={{
               background:
                 theme === 'dark'
                   ? 'linear-gradient(315deg, #fde047 0%, #facc15 50%, #eab308 100%)'
                   : 'linear-gradient(315deg, #facc15 0%, #eab308 50%, #ca8a04 100%)',
-              transform: 'translate(10%, -5%)'
+              animation: 'circularMotion4 15s linear infinite',
+              filter: 'blur(2.5px)'
             }}
           ></div>
 
           {/* Small Heart 3 */}
           <div
-            className="absolute top-1/2 left-1/3 w-56 h-56 opacity-75"
+            className="absolute top-2/3 left-1/5 w-56 h-56 opacity-75"
             style={{
               background:
                 theme === 'dark'
                   ? 'linear-gradient(90deg, #fef3c7 0%, #fde047 100%)'
                   : 'linear-gradient(90deg, #fde047 0%, #fbbf24 100%)',
-              transform: 'rotate(45deg)'
+              animation: 'circularMotion3 15s linear infinite',
+              filter: 'blur(1px)'
             }}
           >
             <div
@@ -201,24 +252,27 @@ export function Home() {
 
           {/* Small Circle 3 */}
           <div
-            className="absolute bottom-1/3 right-1/4 w-64 h-64 opacity-80 rounded-full"
+            className="absolute bottom-1/5 right-2/5 w-64 h-64 opacity-80 rounded-full"
             style={{
               background:
                 theme === 'dark'
                   ? 'linear-gradient(180deg, #fbbf24 0%, #f59e0b 50%, #eab308 100%)'
-                  : 'linear-gradient(180deg, #f59e0b 0%, #d97706 50%, #92400e 100%)'
+                  : 'linear-gradient(180deg, #f59e0b 0%, #d97706 50%, #92400e 100%)',
+              animation: 'circularMotion6 15s linear infinite',
+              filter: 'blur(2px)'
             }}
           ></div>
 
           {/* Tiny Hearts and Circles for accent */}
           <div
-            className="absolute top-3/4 left-1/6 w-40 h-40 opacity-65"
+            className="absolute top-1/6 left-2/3 w-40 h-40 opacity-65"
             style={{
               background:
                 theme === 'dark'
                   ? 'linear-gradient(60deg, #fef3c7 0%, #fde047 100%)'
                   : 'linear-gradient(60deg, #fde047 0%, #facc15 100%)',
-              transform: 'rotate(30deg)'
+              animation: 'circularMotion7 15s linear infinite',
+              filter: 'blur(1.5px)'
             }}
           >
             <div
@@ -250,30 +304,33 @@ export function Home() {
           </div>
 
           <div
-            className="absolute top-1/6 right-1/6 w-48 h-48 opacity-70 rounded-full"
+            className="absolute top-3/5 right-1/6 w-48 h-48 opacity-70 rounded-full"
             style={{
               background:
                 theme === 'dark'
                   ? 'linear-gradient(120deg, #fde047 0%, #fbbf24 100%)'
-                  : 'linear-gradient(120deg, #fbbf24 0%, #f59e0b 100%)'
+                  : 'linear-gradient(120deg, #fbbf24 0%, #f59e0b 100%)',
+              animation: 'circularMotion8 20s linear infinite',
+              filter: 'blur(3px)'
             }}
           ></div>
         </div>
 
         {/* Enhanced blur and contrast overlay */}
-        <div className="absolute inset-0 backdrop-blur-[25px] bg-white/30 dark:bg-black/40"></div>
+        <div className="absolute inset-0 backdrop-blur-[40px] bg-white/30 dark:bg-black/40"></div>
 
         {/* Additional gradient overlay for better contrast */}
         <div className="absolute inset-0 bg-gradient-to-br from-white/60 via-white/40 to-white/50 dark:from-black/60 dark:via-black/40 dark:to-black/50"></div>
+
+        {/* Extra blur layer for depth */}
+        <div className="absolute inset-0 backdrop-blur-[15px] bg-white/10 dark:bg-black/15"></div>
       </div>
 
       {/* Content */}
       <div className="relative z-10 min-h-screen flex items-center justify-center p-4">
         <div className="w-full max-w-md relative">
           {/* Theme Toggle */}
-          <div className="flex justify-end mb-4">
-            <ModeToggle />
-          </div>
+          <ModeToggle />
 
           <Card className="border border-white/30 dark:border-white/20 shadow-2xl backdrop-blur-xl bg-white/85 dark:bg-black/70">
             <CardHeader className="text-center space-y-2 pb-6">
