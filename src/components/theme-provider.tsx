@@ -64,7 +64,7 @@ export function ThemeProvider({ children, defaultTheme = 'system', storageKey = 
 }
 
 export const useTheme = () => {
-  const ctx = useContext(ThemeProviderContext)
-  if (!ctx) throw new Error('useTheme must be used within a ThemeProvider')
-  return ctx
+  const contextTheme = useContext(ThemeProviderContext)
+  if (!contextTheme) throw new Error('useTheme must be used within a ThemeProvider')
+  return contextTheme
 }

@@ -158,7 +158,7 @@ const densityParams = {
     satFactor: 0.85,
     countMult: 1.3
   },
-  low: {
+  high: {
     overlayA: 'backdrop-blur-[40px]',
     overlayB: 'backdrop-blur-[20px]',
     veil1: 'bg-white/35 dark:bg-black/40',
@@ -192,7 +192,7 @@ const densityParams = {
     satFactor: 1.0,
     countMult: 1.0
   },
-  high: {
+  low: {
     overlayA: 'backdrop-blur-[10px]',
     overlayB: 'backdrop-blur-[6px]',
     veil1: 'bg-white/25 dark:bg-black/30',
