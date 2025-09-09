@@ -25,7 +25,7 @@ export function AuthForm() {
   return (
     <div className="min-h-screen flex items-center justify-center p-4">
       <div className="w-full max-w-md relative">
-        <Card className="w-full max-w-md shadow-lg">
+        <Card className="border border-white/30 dark:border-white/20 shadow-2xl backdrop-blur-xl bg-white/85 dark:bg-black/70">
           <CardHeader className="text-center pb-6">
             <div className="inline-flex items-center justify-center w-16 h-16 bg-primary rounded-full mb-4 mx-auto">
               <Mail className="w-8 h-8 text-primary-foreground" />
