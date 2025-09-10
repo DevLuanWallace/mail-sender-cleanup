@@ -7,7 +7,7 @@ export function ThemeSwitch() {
   const isDark = resolvedTheme === 'dark'
 
   return (
-    <div className="absolute top-6 right-6 flex items-center gap-2">
+    <div className="flex items-center gap-2">
       <Sun className="w-4 h-4 text-muted-foreground" />
       <Switch
         checked={isDark}

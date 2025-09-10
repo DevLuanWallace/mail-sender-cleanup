@@ -1,8 +1,8 @@
 import { Home, Mail, Search } from 'lucide-react'
-import { useTheme } from '../../components/theme-provider'
-import { Button } from '../../components/ui/button'
-import { Card, CardContent, CardHeader, CardTitle } from '../../components/ui/card'
-import { AnimatedBackdrop } from '../../components/animated-backdrop'
+import { useTheme } from '@/components/theme-provider'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { AnimatedBackdrop } from '@/components/animated-backdrop'
 import { useNavigate } from 'react-router'
 
 export function NotFound() {
@@ -37,7 +37,7 @@ export function NotFound() {
               <CardContent className="space-y-4">
                 <div className="space-y-3 anim-fade-in-up anim-delay-600">
                   <Button
-                    onClick={() => navigate('/inbox')}
+                    onClick={() => navigate('/dashboard')}
                     className="cursor-pointer w-full bg-gradient-to-r from-amber-400 to-yellow-500 hover:from-amber-500 hover:to-yellow-600 text-white shadow-lg hover:shadow-xl transition-all duration-200"
                   >
                     <Home className="w-4 h-4 mr-2" />
@@ -47,7 +47,7 @@ export function NotFound() {
                   <Button
                     variant="outline"
                     onClick={() => window.history.back()}
-                    className="cursor-pointer w-full bg-white/50 dark:bg-black/50 backdrop-blur-sm border-white/30 dark:border-white/20 hover:bg-white/80 dark:hover:bg-black/70 transition-all duration-200"
+                    className="cursor-pointer w-full bg-white/30 border-4 dark:border-1 dark:bg-black/50 backdrop-blur-sm border-white/30 dark:border-white/20 hover:bg-white/80 dark:hover:bg-black/70 transition-all duration-200"
                   >
                     Go Back
                   </Button>
