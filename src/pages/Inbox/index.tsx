@@ -3,8 +3,17 @@ import { AppSidebar } from './components/Sidebar/AppSidebar'
 import DashboardContent from './components/DashboardContent'
 import { Header } from './components/Header'
 
+export interface SenderType {
+  id: number
+  sender: string
+  name: string
+  emailCount: number
+  lastReceived: string
+  hasUnsubscribe: boolean
+}
+
 export const Dashboard = () => {
-  const mockSenders = [
+  const mockSenders: SenderType[] = [
     {
       id: 1,
       sender: 'newsletter@example.com',
@@ -57,7 +66,7 @@ export const Dashboard = () => {
       <main className="flex-1">
         <Header />
         <section className="p-6">
-          <DashboardContent />
+          <DashboardContent senders={mockSenders} />
         </section>
       </main>
     </SidebarProvider>

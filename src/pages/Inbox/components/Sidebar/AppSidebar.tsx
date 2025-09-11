@@ -13,7 +13,7 @@ import { SidebarLink } from './SidebarLink'
 type Props = {
   totalEmails?: number
   totalSenders?: number
-  onItemClick?: () => void // opcional: fechar sidebar no mobile
+  onItemClick?: () => void
 }
 
 export function AppSidebar({ totalEmails, totalSenders, onItemClick }: Props) {

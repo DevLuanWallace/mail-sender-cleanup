@@ -30,7 +30,7 @@ export function AuthForm() {
             <div className="inline-flex items-center justify-center w-16 h-16 bg-primary rounded-full mb-4 mx-auto">
               <Mail className="w-8 h-8 text-primary-foreground" />
             </div>
-            <CardTitle className="text-2xl">Inbox Cleaner</CardTitle>
+            <CardTitle className="text-2xl">Broomail</CardTitle>
             <CardDescription>{isLogin ? 'Sign in to your account' : 'Create a new account'}</CardDescription>
           </CardHeader>
 
